@@ -1,0 +1,178 @@
+import '/config/global_color.dart';
+import '/config/global_sadow.dart';
+import '/config/global_text_style.dart';
+import '/lang/l.dart';
+import '/screen/interval_reminder/interval_reminder_screen.dart';
+import '/screen/standard_reminder/standard_reminder_screen.dart';
+import '/screen/water/controller/warter_controller.dart';
+import '/widget/appbar_base.dart';
+import '/widget/body_background.dart';
+import '/widget/gradient_text.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+
+class NotificationScreen extends StatefulWidget {
+  const NotificationScreen({super.key});
+
+  @override
+  State<NotificationScreen> createState() => _NotificationScreenState();
+}
+
+class _NotificationScreenState extends State<NotificationScreen> {
+  final waterCtr = Get.find<WarterController>();
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: BodyCustom(
+        appbar: AppbarBase(
+          title: GradientText(
+            L.reminderMode.tr,
+            gradient: GlobalColors.linearPrimary2,
+            style: GlobalTextStyles.font20w600ColorWhite,
+          ),
+          actions: [],
+        ),
+        edgeInsetsPadding:
+            const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
+        isShowBgImages: false,
+        child: SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _buildButtonStandard(waterCtr),
+              20.verticalSpace,
+              _buildButtonInterval(waterCtr)
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  GestureDetector _buildButtonInterval(WarterController waterCtr) {
+    return GestureDetector(
+      onTap: () {
+        Get.to(IntervalReminderScreen());
+      },
+      child: Obx(
+        () => Container(
+          height: 100.h,
+          width: double.infinity,
+          padding: EdgeInsets.all(16.0),
+          decoration: BoxDecoration(
+              boxShadow: GlobalSadow.primary,
+              borderRadius: BorderRadius.circular(16.0),
+              color: waterCtr.reminderMode.value == "interval"
+                  ? null
+                  : Colors.white,
+              gradient: waterCtr.reminderMode.value == "interval"
+                  ? GlobalColors.linearPrimary2
+                  : null),
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      L.interval.tr,
+                      style: waterCtr.reminderMode.value == "interval"
+                          ? GlobalTextStyles.font16w600ColorWhite
+                          : GlobalTextStyles.font16w600ColorBlack,
+                    ),
+                    4.verticalSpace,
+                    Text(
+                      L.intervalDes.tr,
+                      style: waterCtr.reminderMode.value == "interval"
+                          ? GlobalTextStyles.font12w400ColorWhite
+                          : GlobalTextStyles.font12w400ColorNewtral,
+                    ),
+                  ],
+                ),
+              ),
+              SvgPicture.asset("assets/icons/ic_next2.svg")
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  GestureDetector _buildButtonStandard(WarterController waterCtr) {
+    return GestureDetector(
+      onTap: () {
+        Get.to(StandardReminderScreen());
+      },
+      child: Obx(
+        () => Container(
+          height: 100.h,
+          width: double.infinity,
+          padding: EdgeInsets.all(16.0),
+          decoration: BoxDecoration(
+              boxShadow: GlobalSadow.primary,
+              borderRadius: BorderRadius.circular(16.0),
+              color: waterCtr.reminderMode.value == "standard"
+                  ? null
+                  : Colors.white,
+              gradient: waterCtr.reminderMode.value == "standard"
+                  ? GlobalColors.linearPrimary2
+                  : null),
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      L.standard.tr,
+                      style: waterCtr.reminderMode.value == "standard"
+                          ? GlobalTextStyles.font16w600ColorWhite
+                          : GlobalTextStyles.font16w600ColorBlack,
+                    ),
+                    4.verticalSpace,
+                    Text(
+                      L.standardDes.tr,
+                      style: waterCtr.reminderMode.value == "standard"
+                          ? GlobalTextStyles.font12w400ColorWhite
+                          : GlobalTextStyles.font12w400ColorNewtral,
+                    ),
+                  ],
+                ),
+              ),
+              SvgPicture.asset("assets/icons/ic_next2.svg")
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Row _builTitle() {
+    return Row(
+      children: [
+        8.horizontalSpace,
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              L.reminderMode.tr,
+              style: GlobalTextStyles.font16w600ColorBlack,
+            ),
+            Text(
+              L.reminderModeDes.tr,
+              style: GlobalTextStyles.font12w400ColorNewtral,
+            ),
+          ],
+        ),
+        Spacer(),
+        GestureDetector(
+            onTap: () {},
+            child: Obx(() => waterCtr.reminderMode.value != ""
+                ? SvgPicture.asset("assets/icons/notification_on.svg")
+                : SvgPicture.asset("assets/icons/notification.svg"))),
+      ],
+    );
+  }
+}
