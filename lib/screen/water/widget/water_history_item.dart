@@ -1,3 +1,6 @@
+import 'package:drink_water_reminder/util/audio_player_helper.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '/config/global_color.dart';
 import '/config/global_text_style.dart';
 import '/model/history.dart';
@@ -30,12 +33,13 @@ class _WaterHistoryItemState extends State<WaterHistoryItem> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => checkSpam(() {
+        AudioPlayerHelper.playAudio("sounds/water.mp3");
         waterCtr.addDrank(widget.history.ml!, false, widget.history);
       }),
       child: Container(
         margin: EdgeInsets.only(left: 16.0),
-        height: 100.0,
-        width: 100.0,
+        height: 100.h,
+        width: 110.h,
         padding: EdgeInsets.all(8.0),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8.0),

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class GradientText extends StatelessWidget {
@@ -9,6 +8,7 @@ class GradientText extends StatelessWidget {
     this.style,
     this.maxLines,
     this.overflow,
+    this.textAlign,
   });
 
   final String text;
@@ -16,7 +16,7 @@ class GradientText extends StatelessWidget {
   final int? maxLines;
   final TextOverflow? overflow;
   final Gradient? gradient;
-
+  final TextAlign? textAlign;
   @override
   Widget build(BuildContext context) {
     const defaultGradient =
@@ -34,6 +34,7 @@ class GradientText extends StatelessWidget {
         ),
         maxLines: maxLines,
         overflow: overflow,
+        textAlign: textAlign,
       ),
     );
   }

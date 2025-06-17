@@ -1,3 +1,5 @@
+import 'package:lottie/lottie.dart';
+
 import '/config/global_color.dart';
 import '/config/global_sadow.dart';
 import '/config/global_text_style.dart';
@@ -30,6 +32,7 @@ class _DailyGoalScreenState extends State<DailyGoalScreen> {
   @override
   Widget build(BuildContext context) {
     return BodyCustom(
+      resizeToAvoidBottomInset: false,
       appbar: AppbarBase(
         title: GradientText(
           L.dailyGoal.tr,
@@ -42,17 +45,12 @@ class _DailyGoalScreenState extends State<DailyGoalScreen> {
       child: Column(
         children: [
           Spacer(),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 38.0),
-            child: Image.asset(
-              "assets/images/daily_goal2.png",
-              width: 300.w,
-              height: 300.w,
-            ),
+          Lottie.asset(
+            "assets/lotties/daily_goal.json",
+            width: 300.w,
+            height: 300.w,
           ),
-          SizedBox(
-            height: 38.0,
-          ),
+          30.verticalSpace,
           Container(
             padding: EdgeInsets.symmetric(horizontal: 16.0),
             height: 60.h,

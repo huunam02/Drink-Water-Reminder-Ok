@@ -5,10 +5,8 @@ import '/screen/permission/permission_controller.dart';
 import '/screen/setting/controller/setting_controller.dart';
 import '/screen/standard_reminder/controller/standard_reminder_controller.dart';
 import '/screen/water/controller/warter_controller.dart';
-
 import '/screen/languege/controller/languege_controller.dart';
 import '/screen/oboarding/controller/onboarding_controller.dart';
-import '/screen/rate_app/rate_app.dart';
 import '/util/preferences_util.dart';
 import 'package:get/get.dart';
 
@@ -18,8 +16,6 @@ Future<void> init() async {
   final languageController = LanguageController();
   Get.lazyPut(() => languageController, fenix: true);
 
-  final rateController = RateAppController();
-  Get.lazyPut(() => rateController, fenix: true);
   final onboardingController = OnboardingController();
   Get.lazyPut(() => onboardingController, fenix: true);
   final permissionController = PermissionController();

@@ -1,9 +1,9 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '/config/global_color.dart';
 import '/config/global_sadow.dart';
 import '/config/global_text_style.dart';
 import '/model/history.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class CustomItemRecent extends StatelessWidget {
   const CustomItemRecent(
@@ -38,11 +38,13 @@ class CustomItemRecent extends StatelessWidget {
                 ),
                 Text(
                   "${DateTime.parse(history.dateTime!).hour}:${DateTime.parse(history.dateTime!).minute > 9 ? DateTime.parse(history.dateTime!).minute : DateTime.parse(history.dateTime!).minute.toString().padLeft(2, "0")}",
-                  style: GlobalTextStyles.font12w400ColorNewtral,
+                  style: GlobalTextStyles.font12w400ColorNewtral, 
                 )
               ],
             ),
-            GestureDetector(child: SvgPicture.asset("assets/icons/trash.svg"))
+            GestureDetector(
+                child: Icon(Icons.delete_forever_outlined,
+                    color: Colors.redAccent, size: 30.w)),
           ],
         ),
       ),

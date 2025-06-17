@@ -8,14 +8,14 @@ class LanguageController extends GetxController {
   RxBool isClickLang = false.obs;
   RxInt selectedLanguageIndex = 0.obs;
   var listLanguege = [
-    Languege("Hindi", "assets/images/hindi.png", "hi"),
+    Languege("Vietnamese", "assets/images/vietnam.png", "vi"),
+    // Languege("Hindi", "assets/images/hindi.png", "hi"),
     Languege("Spanish", "assets/images/spanis.png", "es"),
-    Languege("French", "assets/images/french.png", "fr"),
+    // Languege("French", "assets/images/french.png", "fr"),
     Languege("German", "assets/images/german.png", "de"),
     Languege("Indonesian", "assets/images/indonesia.png", "id"),
     Languege("Portuguese", "assets/images/portuguese.png", "pt"),
     Languege("English", "assets/images/english.png", "en"),
-    Languege("Vietnamese", "assets/images/vietnam.png", "vi")
   ].obs;
   RxString currentLang = PreferencesUtil.getLanguage().obs;
   RxString currentNameLang = "English".obs;

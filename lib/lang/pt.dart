@@ -18,9 +18,9 @@ Map<String, String> ptLanguage = {
   L.titleBoarding1: "Seu Parceiro de Bem-Estar",
   L.contentBoarding1:
       "Simples, inteligente e personalizado para mantê-lo saudável e hidratado.",
-  L.titleBoarding2: "Acompanhe Sua Hidratação",
+  L.titleBoarding2: "Adicione seus objetivos diários",
   L.contentBoarding2:
-      "Registre a ingestão diária de água para construir um estilo de vida saudável e equilibrado.",
+      "Adicione um objetivo diário de água para construir um estilo de vida saudável e equilibrado.",
   L.titleBoarding3: "Permaneça Hidratado na Hora Certa",
   L.contentBoarding3:
       "Defina lembretes para beber água e manter seus objetivos de bem-estar.",
@@ -89,4 +89,5 @@ Map<String, String> ptLanguage = {
   L.areYouSureDelete:
       "Tem certeza de que deseja excluir este registro do seu histórico?",
   L.delete: "Excluir",
+  L.youHaveAchievedYourGoalToday: "Você alcançou sua meta hoje",
 };

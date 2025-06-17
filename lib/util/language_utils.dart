@@ -4,8 +4,6 @@ import '/config/global_const.dart';
 import '/lang/de.dart';
 import '/lang/en.dart';
 import '/lang/es.dart';
-import '/lang/fr.dart';
-import '/lang/hi.dart';
 import '/lang/id.dart';
 import '/lang/pt.dart';
 import 'package:flutter/material.dart';
@@ -35,9 +33,9 @@ class LanguageUtils extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
         'en': enLanguage,
-        'hi': hiLanguage,
+        // 'hi': hiLanguage,
         'es': esLanguage,
-        'fr': frLanguage,
+        // 'fr': frLanguage,
         'de': deLanguage,
         'id': idLanguage,
         'pt': ptLanguage,

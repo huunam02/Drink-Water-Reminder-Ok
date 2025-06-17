@@ -22,7 +22,8 @@ class _PrivacyPolicyScreenState extends LifecycleState<PrivacyPolicyScreen> {
         onHttpError: (error) {},
         onWebResourceError: (error) {},
       ))
-      ..loadRequest(Uri.parse("https://amazic.net/Privacy-Policy-Watter.html"));
+      ..loadRequest(Uri.parse(
+          "https://sites.google.com/view/privacypolicydrinkwaterremider/trang-ch%E1%BB%A7"));
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,

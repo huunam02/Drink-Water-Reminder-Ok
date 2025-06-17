@@ -1,3 +1,4 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '/screen/water/controller/warter_controller.dart';
 import '/widget/dialog_daily_goal.dart';
 import '/widget/gradient_text.dart';
@@ -7,9 +8,7 @@ import '/lang/l.dart';
 import '/screen/languege/controller/languege_controller.dart';
 import '/screen/languege/language.dart';
 import '/screen/privacy/privacy.dart';
-import '/screen/rate_app/rate_app.dart';
 import '/screen/setting/controller/setting_controller.dart';
-import '/util/preferences_util.dart';
 import '/widget/body_background.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -37,16 +36,6 @@ class _SettingScreenState extends State<SettingScreen> {
       await Future.delayed(const Duration(seconds: 2));
       isClicking = false;
     }
-  }
-
-  void rateApp() async {
-    // EventLog.logEvent("rate_show", parameters: {"position": "setting"});
-    await showDialog(
-      context: Get.context!,
-      builder: (context) => const SettingsRate(),
-    );
-    await Future.delayed(const Duration(seconds: 1));
-    setState(() {});
   }
 
   @override
@@ -81,9 +70,7 @@ class _SettingScreenState extends State<SettingScreen> {
                 borderRadius: BorderRadius.circular(12)),
             child: Column(
               children: [
-                const SizedBox(
-                  height: 24,
-                ),
+                24.verticalSpace,
                 GestureDetector(
                   onTap: () => checkSpam(() {
                     showDialog(
@@ -104,9 +91,7 @@ class _SettingScreenState extends State<SettingScreen> {
                     children: [
                       SvgPicture.asset("assets/icons/daily_setting.svg",
                           height: 24.0, width: 24.0),
-                      const SizedBox(
-                        width: 16.0,
-                      ),
+                      16.horizontalSpace,
                       Text(
                         L.dailyGoal.tr,
                         style: GlobalTextStyles.font14w400ColorBlack
@@ -129,17 +114,13 @@ class _SettingScreenState extends State<SettingScreen> {
                               fontWeight: FontWeight.w500),
                         ),
                       ),
-                      const SizedBox(
-                        width: 8.0,
-                      ),
+                      8.horizontalSpace,
                       SvgPicture.asset("assets/icons/ic_next_setting.svg",
                           height: 24.0, width: 24.0),
                     ],
                   ),
                 ),
-                const SizedBox(
-                  height: 24,
-                ),
+                24.verticalSpace,
                 Row(
                   children: [
                     SvgPicture.asset("assets/icons/unit_setting.svg",
@@ -201,9 +182,7 @@ class _SettingScreenState extends State<SettingScreen> {
                 borderRadius: BorderRadius.circular(12)),
             child: Column(
               children: [
-                const SizedBox(
-                  height: 24,
-                ),
+                24.verticalSpace,
                 GestureDetector(
                   onTap: () => checkSpam(() {
                     Get.to(() => const LanguageScreen(isSetting: true));
@@ -212,87 +191,50 @@ class _SettingScreenState extends State<SettingScreen> {
                     children: [
                       SvgPicture.asset("assets/icons/ic_language.svg",
                           height: 24.0, width: 24.0),
-                      const SizedBox(
-                        width: 16.0,
-                      ),
+                      16.horizontalSpace,
                       Text(
                         L.language.tr,
                         style: GlobalTextStyles.font14w400ColorBlack
                             .copyWith(fontWeight: FontWeight.w500),
                       ),
                       const Spacer(),
-                      const SizedBox(
-                        width: 8.0,
-                      ),
+                      8.horizontalSpace,
                       SvgPicture.asset("assets/icons/ic_next_setting.svg",
                           height: 24.0, width: 24.0),
                     ],
                   ),
                 ),
-                const SizedBox(
-                  height: 24,
-                ),
-                PreferencesUtil.getCanRate() == false
-                    ? const SizedBox.shrink()
-                    : Column(
-                        children: [
-                          GestureDetector(
-                            onTap: () => checkSpam(() {
-                              rateApp();
-                            }),
-                            child: Row(
-                              children: [
-                                SvgPicture.asset("assets/icons/ic_rate.svg",
-                                    height: 24.0, width: 24.0),
-                                const SizedBox(
-                                  width: 16.0,
-                                ),
-                                Text(
-                                  L.rate.tr,
-                                  style: GlobalTextStyles.font14w400ColorBlack
-                                      .copyWith(fontWeight: FontWeight.w500),
-                                ),
-                                const Spacer(),
-                                SvgPicture.asset(
-                                    "assets/icons/ic_next_setting.svg",
-                                    height: 24.0,
-                                    width: 24.0),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 24,
-                          ),
-                        ],
-                      ),
+                24.verticalSpace,
                 GestureDetector(
                   onTap: () {
                     checkSpam(() {
                       Share.shareUri(Uri.parse(
-                          "https://play.google.com/store/apps/details?id=com.drink.water.tracker.reminder"));
+                          "https://play.google.com/store/apps/details?id=com.stallion.drinkwaterreminder"));
                     });
                   },
                   child: Row(
                     children: [
-                      SvgPicture.asset("assets/icons/ic_share.svg",
-                          height: 24.0, width: 24.0),
-                      const SizedBox(
-                        width: 16.0,
+                      SvgPicture.asset(
+                        "assets/icons/ic_share.svg",
+                        height: 24.0,
+                        width: 24.0,
                       ),
+                      16.horizontalSpace,
                       Text(
                         L.share.tr,
                         style: GlobalTextStyles.font14w400ColorBlack
                             .copyWith(fontWeight: FontWeight.w500),
                       ),
                       const Spacer(),
-                      SvgPicture.asset("assets/icons/ic_next_setting.svg",
-                          height: 24.0, width: 24.0),
+                      SvgPicture.asset(
+                        "assets/icons/ic_next_setting.svg",
+                        height: 24.0,
+                        width: 24.0,
+                      ),
                     ],
                   ),
                 ),
-                const SizedBox(
-                  height: 24,
-                ),
+                24.verticalSpace,
                 GestureDetector(
                   onTap: () => checkSpam(() {
                     Get.to(const PrivacyPolicyScreen());
@@ -301,17 +243,18 @@ class _SettingScreenState extends State<SettingScreen> {
                     children: [
                       SvgPicture.asset("assets/icons/ic_lock.svg",
                           height: 24.0, width: 24.0),
-                      const SizedBox(
-                        width: 16.0,
-                      ),
+                      16.horizontalSpace,
                       Text(
                         L.privacyPolicy.tr,
                         style: GlobalTextStyles.font14w400ColorBlack
                             .copyWith(fontWeight: FontWeight.w500),
                       ),
                       const Spacer(),
-                      SvgPicture.asset("assets/icons/ic_next_setting.svg",
-                          height: 24.0, width: 24.0),
+                      SvgPicture.asset(
+                        "assets/icons/ic_next_setting.svg",
+                        height: 24.0,
+                        width: 24.0,
+                      ),
                     ],
                   ),
                 ),

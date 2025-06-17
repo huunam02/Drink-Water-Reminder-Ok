@@ -1,3 +1,5 @@
+import 'package:drink_water_reminder/util/audio_player_helper.dart';
+
 import '/config/global_color.dart';
 import '/config/global_text_style.dart';
 import '/lang/l.dart';
@@ -169,6 +171,7 @@ class _CreateDrinkScreenState extends State<CreateDrinkScreen> {
                         }
                         createDrinkCtl.waterLevel.value = 0.12;
                         waterCtr.addDrank(result, true, null);
+                        AudioPlayerHelper.playAudio("sounds/water.mp3");
                       }
                     } catch (e) {
                       print(e);

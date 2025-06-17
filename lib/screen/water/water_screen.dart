@@ -1,3 +1,5 @@
+import 'package:lottie/lottie.dart';
+
 import '/config/global_color.dart';
 import '/config/global_text_style.dart';
 import '/lang/l.dart';
@@ -60,6 +62,31 @@ class _WaterScreenState extends State<WaterScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Obx(
+              () {
+                if (waterCtr.drankWater.value >= waterCtr.dailyGoal.value) {
+                  return Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          L.youHaveAchievedYourGoalToday.tr,
+                          style: GlobalTextStyles.font20w700ColorPrimary,
+                          textAlign: TextAlign.center,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                      Lottie.asset(
+                        "assets/lotties/goal_achieved.json",
+                        width: 80.w,
+                        height: 80.w,
+                      ),
+                    ],
+                  );
+                }
+                return SizedBox.shrink();
+              },
+            ),
             Spacer(),
             CupRiverAnimation(),
             SizedBox(
@@ -148,8 +175,8 @@ class _WaterScreenState extends State<WaterScreen> {
                               children: [
                                 SvgPicture.asset(
                                   "assets/icons/add2.svg",
-                                  height: 24.0,
-                                  width: 24.0,
+                                  height: 24.w,
+                                  width: 24.w,
                                 ),
                                 SizedBox(
                                   height: 8.0,

@@ -12,9 +12,9 @@ class L {
   static const String titleBoarding1 = "Your Wellness Partner";
   static const String contentBoarding1 =
       "Simple, smart, and tailored to keep you healthy and hydrated.";
-  static const String titleBoarding2 = "Track Your Hydration";
+  static const String titleBoarding2 = "Add your daily goals";
   static const String contentBoarding2 =
-      "Log daily water intake to build a healthier, balanced lifestyle .";
+      "Add a daily water goal to build a healthier, more balanced lifestyle.";
   static const String titleBoarding3 = "Stay Hydrated On Time";
   static const String contentBoarding3 =
       "Set reminders to drink water and maintain your wellness goals.";
@@ -90,4 +90,7 @@ class L {
   static const String statistical = "Statistical";
   static const String dailyReminderAt = "Daily reminder at";
   static const String recentDrinkingHistory = "Recent drinking history";
+
+  static const String youHaveAchievedYourGoalToday =
+      "You have achieved your goal today";
 }

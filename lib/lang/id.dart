@@ -18,9 +18,9 @@ Map<String, String> idLanguage = {
   L.titleBoarding1: "Mitra Kesehatan Anda",
   L.contentBoarding1:
       "Sederhana, cerdas, dan disesuaikan untuk menjaga Anda sehat dan terhidrasi.",
-  L.titleBoarding2: "Lacak Hidrasi Anda",
+  L.titleBoarding2: "Tambahkan tujuan harian Anda",
   L.contentBoarding2:
-      "Catat asupan air harian untuk membangun gaya hidup sehat dan seimbang.",
+      "Tambahkan tujuan harian air untuk membangun gaya hidup sehat dan seimbang.",
   L.titleBoarding3: "Tetap Terhidrasi tepat waktu",
   L.contentBoarding3:
       "Atur pengingat untuk minum air dan mempertahankan tujuan kesehatan Anda.",
@@ -88,4 +88,5 @@ Map<String, String> idLanguage = {
   L.areYouSureDelete:
       "Apakah Anda yakin ingin menghapus catatan ini dari riwayat Anda?",
   L.delete: "Menghapus",
+  L.youHaveAchievedYourGoalToday: "Anda telah mencapai tujuan Anda hari ini",
 };

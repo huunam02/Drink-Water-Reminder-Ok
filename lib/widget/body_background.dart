@@ -8,18 +8,21 @@ class BodyCustom extends StatelessWidget {
       this.edgeInsetsPadding,
       required this.isShowBgImages,
       this.appbar,
-      this.bottomNavigationBar});
+      this.bottomNavigationBar,
+      this.resizeToAvoidBottomInset});
   final Widget child;
   final EdgeInsets? edgeInsetsPadding;
   final bool isShowBgImages;
   final PreferredSizeWidget? appbar;
   final Widget? bottomNavigationBar;
+  final bool? resizeToAvoidBottomInset;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: bottomNavigationBar,
       appBar: appbar,
       backgroundColor: isShowBgImages ? Colors.transparent : GlobalColors.bg1,
+      resizeToAvoidBottomInset: resizeToAvoidBottomInset,
       body: Container(
           padding: edgeInsetsPadding,
           height: double.infinity,

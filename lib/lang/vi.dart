@@ -18,9 +18,9 @@ Map<String, String> viLanguage = {
   L.titleBoarding1: "Người bạn đồng hành sức khỏe",
   L.contentBoarding1:
       "Đơn giản, thông minh, và phù hợp để giữ bạn khỏe mạnh và đủ nước.",
-  L.titleBoarding2: "Theo dõi lượng nước",
+  L.titleBoarding2: "Thêm mục tiêu hàng ngày",
   L.contentBoarding2:
-      "Ghi lại lượng nước uống hàng ngày để xây dựng lối sống lành mạnh, cân bằng.",
+      "Thêm một mục tiêu nước hàng ngày để xây dựng lối sống lành mạnh, cân bằng.",
   L.titleBoarding3: "Uống nước đúng giờ",
   L.contentBoarding3: "Đặt lời nhắc để uống nước và duy trì mục tiêu sức khỏe.",
   L.titleBoarding4: "Xem tiến trình của bạn",
@@ -87,4 +87,5 @@ Map<String, String> viLanguage = {
   L.deleteRecord: "Xóa bản ghi",
   L.areYouSureDelete: "Bạn có chắc muốn xóa bản ghi này khỏi lịch sử không?",
   L.delete: "Xóa",
+  L.youHaveAchievedYourGoalToday: "Bạn đã đạt được mục tiêu hôm nay",
 };

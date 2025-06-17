@@ -243,6 +243,11 @@ class GlobalTextStyles {
       fontFamily: fontFamily,
       fontWeight: FontWeight.w700,
       color: Colors.black);
+  static TextStyle font20w700ColorPrimary = TextStyle(
+      fontSize: 20.sp,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w700,
+      color: GlobalColors.linearPrimary.colors.last);
   static TextStyle font21w600ColorWhite = TextStyle(
       fontSize: 21.sp,
       fontFamily: fontFamily,

@@ -57,16 +57,16 @@ class NotificationService {
       L.notiTitle.tr,
       L.notiDes.tr,
       tz.TZDateTime.from(scheduledDate, tz.local),
-      NotificationDetails(
-        iOS: const DarwinNotificationDetails(),
+      const NotificationDetails(
+        iOS: DarwinNotificationDetails(),
         android: AndroidNotificationDetails(
-            "REMINDER", 'Reminder Notifications',
-            importance: Importance.high,
-            priority: Priority.high,
-            icon: '@mipmap/ic_launcher'),
+          "REMINDER",
+          'Reminder Notifications',
+          importance: Importance.high,
+          priority: Priority.high,
+          icon: '@mipmap/ic_launcher',
+        ),
       ),
-      uiLocalNotificationDateInterpretation:
-          UILocalNotificationDateInterpretation.absoluteTime,
       matchDateTimeComponents: DateTimeComponents.time,
       androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
     );

@@ -19,9 +19,9 @@ Map<String, String> deLanguage = {
   L.titleBoarding1: "Ihr Wellness-Partner",
   L.contentBoarding1:
       "Einfach, intelligent und zugeschnitten, um Sie gesund und hydratisiert zu halten.",
-  L.titleBoarding2: "Verfolgen Sie Ihre Hydration",
+  L.titleBoarding2: "Tägliche Ziele hinzufügen",
   L.contentBoarding2:
-      "Protokollieren Sie Ihre tägliche Wasseraufnahme, um einen gesünderen, ausgewogenen Lebensstil zu fördern.",
+      "Fügen Sie ein tägliches Wasserziel hinzu, um einen gesünderen, ausgewogeneren Lebensstil zu fördern.",
   L.titleBoarding3: "Bleiben Sie rechtzeitig hydratisiert",
   L.contentBoarding3:
       "Stellen Sie Erinnerungen ein, um Wasser zu trinken und Ihre Wellness-Ziele zu erreichen.",
@@ -91,4 +91,5 @@ Map<String, String> deLanguage = {
   L.areYouSureDelete:
       "Möchten Sie diesen Datensatz wirklich aus Ihrem Verlauf löschen?",
   L.delete: "Löschen",
+  L.youHaveAchievedYourGoalToday: "Sie haben Ihr Ziel heute erreicht",
 };

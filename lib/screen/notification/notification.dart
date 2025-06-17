@@ -60,7 +60,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
         () => Container(
           height: 100.h,
           width: double.infinity,
-          padding: EdgeInsets.all(16.0),
+          padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 16.0),
           decoration: BoxDecoration(
               boxShadow: GlobalSadow.primary,
               borderRadius: BorderRadius.circular(16.0),
@@ -72,6 +72,8 @@ class _NotificationScreenState extends State<NotificationScreen> {
                   : null),
           child: Row(
             children: [
+              _buildIconInterval(waterCtr),
+              10.horizontalSpace,
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -92,11 +94,31 @@ class _NotificationScreenState extends State<NotificationScreen> {
                   ],
                 ),
               ),
-              SvgPicture.asset("assets/icons/ic_next2.svg")
+              SvgPicture.asset("assets/icons/ic_next2.svg",
+                  color: waterCtr.reminderMode.value == "interval"
+                      ? Colors.white
+                      : null)
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Container _buildIconInterval(WarterController waterCtr) {
+    return Container(
+      padding: EdgeInsets.all(12.r),
+      decoration: BoxDecoration(
+        color: waterCtr.reminderMode.value == "interval"
+            ? Colors.white.withOpacity(.4)
+            : Color(0xFFE3F1FF),
+        borderRadius: BorderRadius.circular(8.w),
+      ),
+      child: SvgPicture.asset("assets/icons/ic_time_interval.svg",
+          width: 24.w,
+          height: 24.w,
+          color:
+              waterCtr.reminderMode.value == "interval" ? Colors.white : null),
     );
   }
 
@@ -109,7 +131,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
         () => Container(
           height: 100.h,
           width: double.infinity,
-          padding: EdgeInsets.all(16.0),
+          padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 16.0),
           decoration: BoxDecoration(
               boxShadow: GlobalSadow.primary,
               borderRadius: BorderRadius.circular(16.0),
@@ -121,6 +143,8 @@ class _NotificationScreenState extends State<NotificationScreen> {
                   : null),
           child: Row(
             children: [
+              _buildIconStandard(waterCtr),
+              10.horizontalSpace,
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -141,10 +165,31 @@ class _NotificationScreenState extends State<NotificationScreen> {
                   ],
                 ),
               ),
-              SvgPicture.asset("assets/icons/ic_next2.svg")
+              SvgPicture.asset("assets/icons/ic_next2.svg",
+                  color: waterCtr.reminderMode.value == "standard"
+                      ? Colors.white
+                      : null)
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Container _buildIconStandard(WarterController waterCtr) {
+    return Container(
+      padding: EdgeInsets.all(12.r),
+      decoration: BoxDecoration(
+        color: waterCtr.reminderMode.value == "standard"
+            ? Colors.white.withOpacity(.2)
+            : Color(0xFFE3F1FF),
+        borderRadius: BorderRadius.circular(8.w),
+      ),
+      child: SvgPicture.asset(
+        "assets/icons/ic_time_standard.svg",
+        width: 24.w,
+        height: 24.w,
+        color: waterCtr.reminderMode.value == "standard" ? Colors.white : null,
       ),
     );
   }

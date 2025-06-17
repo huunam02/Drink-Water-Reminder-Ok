@@ -5,7 +5,6 @@ Map<String, String> enLanguage = {
   L.statistical: "Statistical",
   L.dailyReminderAt: "Daily reminder at",
   L.recentDrinkingHistory: "Recent drinking history",
-  
   L.splashDes: "This action may contain advertising",
   L.setting: "Setting",
   L.language: "Language",
@@ -19,9 +18,9 @@ Map<String, String> enLanguage = {
   L.titleBoarding1: "Your Wellness Partner",
   L.contentBoarding1:
       "Simple, smart, and tailored to keep you healthy and hydrated.",
-  L.titleBoarding2: "Track Your Hydration",
+  L.titleBoarding2: "Add your daily goals",
   L.contentBoarding2:
-      "Log daily water intake to build a healthier, balanced lifestyle .",
+      "Add a daily water goal to build a healthier, more balanced lifestyle.",
   L.titleBoarding3: "Stay Hydrated On Time",
   L.contentBoarding3:
       "Set reminders to drink water and maintain your wellness goals.",
@@ -90,4 +89,5 @@ Map<String, String> enLanguage = {
   L.areYouSureDelete:
       "Are you sure you want to delete this record from your history?",
   L.delete: "Delete",
+  L.youHaveAchievedYourGoalToday: "You have achieved your goal today",
 };

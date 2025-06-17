@@ -18,9 +18,9 @@ Map<String, String> esLanguage = {
   L.titleBoarding1: "Tu compañero de bienestar",
   L.contentBoarding1:
       "Simple, inteligente y adaptado para mantenerte saludable e hidratado.",
-  L.titleBoarding2: "Rastrea tu hidratación",
+  L.titleBoarding2: "Establece tus objetivos diarios",
   L.contentBoarding2:
-      "Registra la ingesta diaria de agua para llevar un estilo de vida más saludable y equilibrado.",
+      "Agrega un objetivo diario de agua para llevar un estilo de vida más saludable y equilibrado.",
   L.titleBoarding3: "Mantente hidratado a tiempo",
   L.contentBoarding3:
       "Configura recordatorios para beber agua y mantener tus objetivos de bienestar.",
@@ -88,4 +88,5 @@ Map<String, String> esLanguage = {
   L.areYouSureDelete:
       "¿Estás seguro de que deseas eliminar este registro de tu historial?",
   L.delete: "Borrar",
+  L.youHaveAchievedYourGoalToday: "Has alcanzado tu meta hoy",
 };
